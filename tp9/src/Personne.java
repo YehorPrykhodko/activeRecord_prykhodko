@@ -7,6 +7,8 @@ public class Personne {
 
     private int id;
     private String nom;
+
+
     private String prenom;
 
     Personne(String n, String pren){
@@ -125,6 +127,11 @@ public class Personne {
     public void setId(int id) {
         this.id = id;
     }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
 
     public int getId() {
         return id;
