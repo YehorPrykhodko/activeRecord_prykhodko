@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 
 /**
@@ -85,6 +86,20 @@ public class PersonneTest {
 	public void testFindByNameNon() throws SQLException {
 		ArrayList<Personne> p = Personne.findByName("ee");
 		assertEquals(0, p.size(),"pas de reponse");
+	}
+
+
+
+	@Test
+	public void testFindById() throws SQLException {
+		Personne p = Personne.findById(1);
+		assertEquals(1, p.getId(), "id doit etre 1");
+	}
+
+	@Test
+	public void testFindByIdNonExistent() throws SQLException {
+		Personne p = Personne.findById(9999);
+		assertNull(p, "doit etre null");
 	}
 
 	@Test
